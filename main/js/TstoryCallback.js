@@ -2,7 +2,7 @@ const url = new URL(window.location.href);
 const urlSearch = url.searchParams;
 const AuthorizationCode = urlSearch.get("code")
 const appId = "1f70d32ba9f9456450e2279374292db4";
-const clientSecret = ""
+const clientSecret = "1f70d32ba9f9456450e2279374292db4dc16be0f70a64f732eb56ffd1654347842cdd571";
 const AccessTokenURL = "https://www.tistory.com/oauth/access_token?client_id={client-id}&client_secret={client-secret}&redirect_uri={redirect-uri}&code={code}&grant_type=authorization_code"
     .replace("{client-id}", appId)
     .replace("{client-secret}",clientSecret)

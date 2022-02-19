@@ -1,0 +1,12 @@
+{
+  "github" : {
+    "OAuthKey": "",
+    "defaultSha" : "master",
+    "ID": "sjsh1623",
+    "repo" : "Book"
+  },
+  "tstory" : {
+    "appId" : "1f70d32ba9f9456450e2279374292db4",
+    "clientSecret" : ""
+  }
+}

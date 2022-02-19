@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/GithubToTStory.iml" filepath="$PROJECT_DIR$/.idea/GithubToTStory.iml" />
       <module fileurl="file://$PROJECT_DIR$/main/main.iml" filepath="$PROJECT_DIR$/main/main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/react-v/react-v.iml" filepath="$PROJECT_DIR$/react-v/react-v.iml" />
     </modules>
   </component>
 </project>

@@ -31,7 +31,7 @@ const extractTreeData = (tree, path) => {
 const TstoryOAuth = () => {
     let requestURL = "https://www.tistory.com/oauth/authorize?client_id={client-id}&redirect_uri={redirect-uri}&response_type=code"
         .replace("{client-id}", key)
-        .replace("{redirect-uri}", "http://localhost:7777/TstoryCallback")
+        .replace("{redirect-uri}", "http://localhost:7777/GithubToTStory/main/TstoryCallback.html")
     console.log(requestURL)
     window.open(requestURL, "_black", "popup")
 }

@@ -3,9 +3,11 @@ import Main from "./pages/Main.js"
 import React from "react";
 import './App.css';
 import TStoryAuthController from "./pages/TStoryAuthController";
+import TStoryOAuth from "./api/tstory/TStoryOAuth";
 
 
 function App() {
+    TStoryOAuth();
     return (
         <BrowserRouter>
             <Routes>

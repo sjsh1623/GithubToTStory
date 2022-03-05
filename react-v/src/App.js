@@ -7,7 +7,11 @@ import TStoryOAuth from "./api/tstory/TStoryOAuth";
 
 
 function App() {
-    TStoryOAuth();
+    const URLPathName = window.location.pathname;
+    if(URLPathName === "callback") {
+        alert("test")
+    }
+    //TStoryOAuth();
     return (
         <BrowserRouter>
             <Routes>

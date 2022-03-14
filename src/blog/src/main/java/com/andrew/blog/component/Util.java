@@ -2,7 +2,8 @@ package com.andrew.blog.component;
 
 import com.andrew.blog.component.ApplicationContextServe;
 import com.andrew.blog.dto.Credential;
-import org.json.JSONObject;
+import com.google.gson.Gson;
+import com.google.gson.JsonParser;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
@@ -12,10 +13,12 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import com.google.gson.JsonObject;
 
 @Component
 public class Util {
-    public JSONObject HttpTransport(String URLDestination, String input) throws Exception {
+    /*
+    public JsonObject HttpTransport(String URLDestination, String input) throws Exception {
         java.net.URL url = new URL(URLDestination);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("POST");
@@ -39,14 +42,14 @@ public class Util {
         }
         in.close();
         connection.disconnect();
-        return new JSONObject(content.toString());
+        return new JsonObject(content.toString());
     }
-
+*/
     public Credential getCredential(String fileName) throws IOException {
         String credentialPath = getProperty("blog.local.absolutePath") + "/data/" + fileName + ".json";
         String content = new String(Files.readAllBytes(Paths.get(credentialPath)));
-        JSONObject credential = new JSONObject(content);
-        return new Credential(credential.getString("client_key"), credential.getString("callback_url"));
+        JsonObject credential = JsonParser.parseString(content).getAsJsonObject();
+        return new Credential(credential.get("client_key").getAsString(), credential.get("callback_url").getAsString());
     }
 
     /**

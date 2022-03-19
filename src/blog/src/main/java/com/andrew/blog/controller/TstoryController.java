@@ -2,12 +2,13 @@ package com.andrew.blog.controller;
 
 import com.andrew.blog.service.TstoryService;
 import com.google.gson.JsonObject;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 
-@RestController
-@RequestMapping("Tstory")
+@Controller
+@RequestMapping("tstory")
 public class TstoryController {
     final TstoryService tstoryService = new TstoryService();
 
@@ -22,8 +23,9 @@ public class TstoryController {
         return result.toString();
     }
 
-    @GetMapping("/callback")
-    public String callback() {
+    @GetMapping("/TstoryCallback")
+    public String callback(@RequestParam("code") String code,  @RequestParam("state") String state) {
+
         return "";
     }
 

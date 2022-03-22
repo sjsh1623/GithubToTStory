@@ -1,8 +1,23 @@
 package com.andrew.blog.service;
 
+import com.andrew.blog.component.HttpTransport;
+import com.google.gson.JsonObject;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class GithubService {
-    public String getTreeData() {
-        return "";
+    public Map<String, String> getGuthubData(String gitHubUserId, String repoName) throws Exception {
+        Map<String,String> gitHubMarkdownData = new HashMap<>();
+        String url = "https://api.github.com/repos/{gitHubUserId}/{repoName}/git/trees/master"
+                .replace("{gitHubUserId}", gitHubUserId)
+                .replace("{repoName}", repoName);
+
+        HttpTransport httpTransport = new HttpTransport(url,"","GET");
+        JsonObject result = httpTransport.getResponse();
+
+        System.out.println(result.toString());
+        return gitHubMarkdownData;
     }
 
     public String getMarkdown() {
